@@ -20,12 +20,39 @@ const blogPostSchema = {
       errorMessage: "Content is a mandatory field and needs to be a string",
     },
   },
-  /*   email: {
+  "author.name": {
     in: ["body"],
-    isEmail: {
-      errorMessage: "Email is a mandatory field and needs to be a string!",
+    isString: {
+      errorMessage: "author.name is a mandatory field and needs to be a string",
     },
-  }, */
+  },
+  "author.avatar": {
+    in: ["body"],
+    isString: {
+      errorMessage:
+        "author.avatar is a mandatory field and needs to be a string",
+    },
+  },
+  "readTime.value": {
+    in: ["body"],
+    isNumeric: {
+      errorMessage:
+        "readTime.value is a mandatory field and needs to be a number",
+    },
+  },
+  "readTime.unit": {
+    in: ["body"],
+    isString: {
+      errorMessage:
+        "readTime.unit is a mandatory field and needs to be a string",
+    },
+  },
+  cover: {
+    in: ["body"],
+    isString: {
+      errorMessage: "Cover is a mandatory field and needs to be a string",
+    },
+  },
 };
 
 export const checksBlogPostSchema = checkSchema(blogPostSchema); //middleware

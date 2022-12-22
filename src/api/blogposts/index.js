@@ -32,7 +32,7 @@ blogPostsRouter.post(
       const blogPostsArray = getBlogPosts();
       blogPostsArray.push(newBlogPost);
       writeBlogPosts(blogPostsArray);
-      res.status(201).send({ newBlogPost });
+      res.status(201).send({ newBlogPost: newBlogPost });
     } catch (error) {
       next(error); //this sends the error to the errorHandlers
     }
