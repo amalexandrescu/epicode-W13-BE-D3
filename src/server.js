@@ -55,4 +55,5 @@ server.use(genericErrorHandler); // 500
 //server needs to run
 server.listen(port, () => {
   console.table(listEndpoints(server));
+  console.log("Server is running on port: ", port);
 });
